@@ -6,14 +6,14 @@ Write-Host $verse[0] -ForegroundColor Black -BackgroundColor white
 #
 # FUNCTIONS
 #
-function clear-host-verse {
+function clearhostverse {
 clear-host
 Write-Host $verse[0] -ForegroundColor Black -BackgroundColor white
 }
 #
 # ALIASES
 #
-set-alias -name CLS -Value clear-host-verse -Option AllScope # clears the screen and pastes the verse of the day at the top again
+set-alias -name CLS -Value clearhostverse -Option AllScope # clears the screen and pastes the verse of the day at the top again
 
 
 ###########################################################################
