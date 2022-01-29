@@ -1,6 +1,6 @@
 � Hi, I’m @IZZY1996
 � Just a Sys Admin trying to do the best I can
-� Windows is my OS of choice
+� Windows for life
 � Mostly Ops but trying to pick up some more code
 
 Made a little <a href="https://github.com/IZZY1996/IZZY1996/blob/main/Microsoft.Powershell_profile.ps1">Verse of the Day Powershell banner</a>.
