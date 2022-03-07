@@ -10,7 +10,7 @@ Write-Host $verse[1] -ForegroundColor Black -BackgroundColor white
 #
 function clearhostverse {
 clear-host
-Write-Host $verse[0] -ForegroundColor Black -BackgroundColor white
+Write-Host $verse[1] -ForegroundColor Black -BackgroundColor white
 }
 #
 # ALIASES
