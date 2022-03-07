@@ -2,6 +2,8 @@
 # VERSE OF THE DAY BANNER
 #
 $verse = @(((Invoke-WebRequest https://www.bible.com/verse-of-the-day).content | where {$_ -match 'data-param-text='}).tostring().split('="') | where {$_ -match '[123]? ?\w+ \d+\:\d+-?\d*\: \w'})
+# On Powershell Core add the following line
+# $verse = @($verse.split('" data-param-url=') | where {$_ -match '[123]? ?\w+ \d+\:\d+-?\d*\: \w'} )
 Write-Host $verse[0] -ForegroundColor Black -BackgroundColor white
 #
 # FUNCTIONS
@@ -18,7 +20,7 @@ set-alias -name CLS -Value clearhostverse -Option AllScope # clears the screen a
 
 ###########################################################################
 # To Use:
-# In Windows PowerShell (not compatible with PowerShell Core) run
+# In Windows PowerShell (for Core uncomment line 6) run
 # notepad.exe $profile
 # And paste the contents in, then save, you will need to restart PowerSehll
 #
