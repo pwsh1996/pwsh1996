@@ -22,6 +22,9 @@ function prompt { #Colors the Prompt
 #
 set-alias -name CLS -Value clearhostverse -Option AllScope # clears the screen and pastes the verse of the day at the top again
 
+# Customize PS ReadLine
+set-PSReadLineOption -PredictionSource History
+set-psReadLineOption -PredictionViewStyle ListView
 
 ###########################################################################
 # To Use:
