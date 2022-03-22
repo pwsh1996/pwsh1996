@@ -15,7 +15,7 @@ function clearhostverse { #Adds the verse of the day on the top of the clear scr
 function prompt { #Colors the Prompt
   Write-Host "PS " -ForegroundColor Green -NoNewline
   Write-Host $pwd -ForegroundColor DarkGreen -NoNewline
-  ">"
+  "> "
 }
 #
 # ALIASES
