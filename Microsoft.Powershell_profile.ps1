@@ -3,7 +3,7 @@
 #############################
 $verseoftheday = @(((Invoke-WebRequest https://www.bible.com/verse-of-the-day).content | where {$_ -match 'data-param-text='}).tostring().split('="') | where {$_ -match '[123]? ?\w+ \d+\:\d+-?\d*\: \w'})
 # On Powershell Core add the following line
-# $verse = @($verse.split('" data-param-url=') | where {$_ -match '[123]? ?\w+ \d+\:\d+-?\d*\: \w'} )
+# $verseoftheday = @($verse.split('" data-param-url=') | where {$_ -match '[123]? ?\w+ \d+\:\d+-?\d*\: \w'} )
 Write-Host $verseoftheday[1] -ForegroundColor Black -BackgroundColor white
 function clearhostverse { #Adds the verse of the day on the top of the clear screen
   clear-host
