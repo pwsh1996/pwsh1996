@@ -1,30 +1,38 @@
-#
-# VERSE OF THE DAY BANNER
-#
-$verse = @(((Invoke-WebRequest https://www.bible.com/verse-of-the-day).content | where {$_ -match 'data-param-text='}).tostring().split('="') | where {$_ -match '[123]? ?\w+ \d+\:\d+-?\d*\: \w'})
+#############################
+#  Verse of the Day Banner  #
+#############################
+$verseoftheday = @(((Invoke-WebRequest https://www.bible.com/verse-of-the-day).content | where {$_ -match 'data-param-text='}).tostring().split('="') | where {$_ -match '[123]? ?\w+ \d+\:\d+-?\d*\: \w'})
 # On Powershell Core add the following line
 # $verse = @($verse.split('" data-param-url=') | where {$_ -match '[123]? ?\w+ \d+\:\d+-?\d*\: \w'} )
-Write-Host $verse[1] -ForegroundColor Black -BackgroundColor white
-#
-# FUNCTIONS
-#
+Write-Host $verseoftheday[1] -ForegroundColor Black -BackgroundColor white
 function clearhostverse { #Adds the verse of the day on the top of the clear screen
   clear-host
-  Write-Host $verse[1] -ForegroundColor Black -BackgroundColor white
+  Write-Host $verseoftheday[1] -ForegroundColor Black -BackgroundColor white
 }
+# Add an alias to call said function
+set-alias -name CLS -Value clearhostverse -Option AllScope # clears the screen and pastes the verse of the day at the top again
+
+
+
+########################
+#   Customize Prompt   #
+########################
 function prompt { #Colors the Prompt
   Write-Host "PS " -ForegroundColor Green -NoNewline
   Write-Host $pwd -ForegroundColor DarkGreen -NoNewline
   "> "
 }
-#
-# ALIASES
-#
-set-alias -name CLS -Value clearhostverse -Option AllScope # clears the screen and pastes the verse of the day at the top again
 
-# Customize PS ReadLine
+
+
+#############################
+#   Customize PS ReadLine   #
+#############################
 set-PSReadLineOption -PredictionSource History
+# Needs to be version 2.2.2 to have the PredictionViewStyle option
 set-psReadLineOption -PredictionViewStyle ListView
+
+
 
 ###########################################################################
 # To Use:
