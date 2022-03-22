@@ -8,9 +8,14 @@ Write-Host $verse[1] -ForegroundColor Black -BackgroundColor white
 #
 # FUNCTIONS
 #
-function clearhostverse {
-clear-host
-Write-Host $verse[1] -ForegroundColor Black -BackgroundColor white
+function clearhostverse { #Adds the verse of the day on the top of the clear screen
+  clear-host
+  Write-Host $verse[1] -ForegroundColor Black -BackgroundColor white
+}
+function prompt { #Colors the Prompt
+  Write-Host "PS " -ForegroundColor Green -NoNewline
+  Write-Host $pwd -ForegroundColor DarkGreen -NoNewline
+  ">"
 }
 #
 # ALIASES
