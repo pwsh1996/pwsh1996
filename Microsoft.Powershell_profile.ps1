@@ -18,10 +18,21 @@ set-alias -name CLS -Value clearhostverse -Option AllScope # clears the screen a
 #   Customize Prompt   #
 ########################
 function prompt { #Colors the Prompt
-  Write-Host "PS " -ForegroundColor Green -NoNewline
-  Write-Host $pwd -ForegroundColor DarkGreen -NoNewline
-  "> "
-}
+    Write-Host "ʝąζöʙ ϷϵͲɼίέ " -ForegroundColor Green -NoNewline
+
+        $battremaining = (Get-WmiObject win32_battery).estimatedchargeremaining
+        if ($battremaining -gt 66) {
+            Write-Host "🔋$battremaining% " -ForegroundColor DarkGreen -NoNewline
+        }
+        elseif ($battremaining -lt 33) {
+            Write-Host "🔋$battremaining% " -ForegroundColor DarkYellow -NoNewline
+        }
+        else {
+            Write-Host "🔋$battremaining% " -ForegroundColor DarkRed -NoNewline
+        }
+    # Write-Host $pwd -ForegroundColor DarkGreen -NoNewline
+    "> "
+  }
 
 
 
