@@ -7,7 +7,7 @@
 
 $hostinfo = (Get-WMIObject -ClassName Win32_ComputerSystem)
 $username = ($hostinfo.Username).Split('\')[1]
-$hostname = $hostinfo.name
+$hostname = hostname
 $hostmodel = $hostinfo.SystemFamily
 $uptime = get-uptime
 $shelly = "Powershell " + $PSVersionTable.PSVersion
