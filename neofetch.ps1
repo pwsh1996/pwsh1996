@@ -28,7 +28,7 @@ if ($consoleorvs -eq "ConsoleHost") {
         $terminfo = "Windows Terminal"
     }
     else {
-        $terminfo = $consoleorvs
+        $terminfo = "Console Host"
     }
 }
 else {
