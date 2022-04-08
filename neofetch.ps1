@@ -1,7 +1,7 @@
 ############################################
 #  Custom Version of dylanaraps/neofetch   #
-#    to make it run faster on Windows      # 
-#                                          #
+#   to make it run faster on Windows and   # 
+#   have no dependencies on Scoop and GIT  #
 # by Jacob Petrie                          #
 ############################################
 
@@ -9,17 +9,19 @@ $hostinfo = (Get-WMIObject -ClassName Win32_ComputerSystem)
 $username = ($hostinfo.Username).Split('\')[1]
 $hostname = hostname
 $hostmodel = $hostinfo.SystemFamily
-$uptime = get-uptime
 $shelly = "Powershell " + $PSVersionTable.PSVersion
 $cpuinfo = (((Get-WmiObject Win32_Processor).Name).replace('(R)',"")).replace('(TM)',"")
 $meminfo = (Get-WmiObject win32_physicalmemory).capacity / 1024 /1024
 $consoleorvs = $host.name
+$uptimeout = ""
 
 if ($PSVersionTable.PSVersion.major -ge 6){
     $kernelver = ($PSVersionTable.OS).Split(" ")[2]
+    $uptime = get-uptime
 }
 else {
     $kernelver = ($PSVersionTable.BuildVersion).tostring()
+    $uptime = (get-date) - (gcim Win32_OperatingSystem).LastBootUpTime
 }
 
 if ($consoleorvs -eq "ConsoleHost") {
@@ -35,23 +37,58 @@ else {
     $terminfo = $host.name
 }
 
-if ($uptime.days -lt 1){
-    if ($uptime.Hours -lt 1) {
-    
-    }
-    else {
+$dayss = $uptime.days.tostring()
+$hourss = $uptime.hours.tostring()
+$minutess = $uptime.minutes.tostring()
 
-    }
+if ($dayss -eq "1") {
+    $dayss = "1 day,"
+}
+elseif ($dayss -eq "0") {
+    $dayss = ""
 }
 else {
-    $updays = $uptime.days
-    if ($updays -eq 1){
-        $uptimeout = "$updays day"
-    }
-    else {
-        $uptimeout = "$updays days"
-    }
+    $dayss = "$dayss days,"
 }
+
+if ($hourss -eq "1") {
+    $hourss = "1 hour,"
+}
+elseif ($hourss -eq "0") {
+    $hourss = ""
+}
+else {
+    $hourss = "$hourss hours,"
+}
+
+if ($minutess -eq "1") {
+    $minutess = "1 minute"
+}
+elseif ($minutess -eq "0") {
+    $minutess = ""
+}
+else {
+    $minutess = "$minutess minutes"
+}
+
+$uptimeout = "$dayss$hourss$minutess"
+#if ($uptime.days -lt 1){
+#    if ($uptime.Hours -lt 1) {
+#    
+#    }
+#    else {
+#
+#    }
+#}
+#else {
+#    $updays = $uptime.days
+#    if ($updays -eq 1){
+#        $uptimeout = "$updays day"
+#    }
+#    else {
+#        $uptimeout = "$updays days"
+#    }
+#}
 
 clear-host
 Write-Host '        ,.=:!!t3Z3z.,' -ForegroundColor red -NoNewline; write-host "                 $username" -ForegroundColor Red -NoNewline;write-host "@" -NoNewline; write-host "$hostname" -ForegroundColor Red
