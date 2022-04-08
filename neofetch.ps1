@@ -13,6 +13,7 @@ $shelly = "Powershell " + $PSVersionTable.PSVersion
 $cpuinfo = (((Get-WmiObject Win32_Processor).Name).replace('(R)',"")).replace('(TM)',"")
 $meminfo = (Get-WmiObject win32_physicalmemory).capacity / 1024 /1024
 $consoleorvs = $host.name
+$osver = "$(((Get-WMIObject win32_operatingsystem).name).split("|")[0]) $((Get-WmiObject Win32_OperatingSystem).OSArchitecture)"
 
 ###############################
 #  Version Specific commands  # 
@@ -87,7 +88,7 @@ $uptimeout = "$dayss$hourss$minutess"
 clear-host
 Write-Host '        ,.=:!!t3Z3z.,' -ForegroundColor red -NoNewline; write-host "                 $username" -ForegroundColor Red -NoNewline;write-host "@" -NoNewline; write-host "$hostname" -ForegroundColor Red
 Write-Host '       :tt:::tt333EE3' -ForegroundColor Red -NoNewline; Write-Host '                 ------------------------'
-write-host '       Et:::ztt33EEEL' -ForegroundColor Red -NoNewline; Write-Host ' @Ee.,      ..,' -ForegroundColor Green -NoNewline; Write-Host "  OS" -ForegroundColor Green -NoNewline; Write-Host ': '
+write-host '       Et:::ztt33EEEL' -ForegroundColor Red -NoNewline; Write-Host ' @Ee.,      ..,' -ForegroundColor Green -NoNewline; Write-Host "  OS" -ForegroundColor Green -NoNewline; Write-Host ": $osver"
 Write-Host '      ;tt:::tt333EE7' -ForegroundColor Red -NoNewline; Write-Host ' ;EEEEEEttttt33#' -ForegroundColor Green -NoNewline; Write-Host "  Host" -ForegroundColor Green -NoNewline; Write-Host ": $hostmodel"
 Write-Host '     :Et:::zt333EEQ.' -ForegroundColor Red -NoNewline; Write-Host ' $EEEEEttttt33QL' -ForegroundColor Green -NoNewline; Write-Host "  Kernel" -ForegroundColor Green -NoNewline; Write-Host ": $kernelver"
 Write-Host '     it::::tt333EEF' -ForegroundColor Red -NoNewline; Write-Host ' @EEEEEEttttt33F' -ForegroundColor Green -NoNewline; Write-Host "   Uptime" -ForegroundColor Green -NoNewline; Write-Host ": $uptimeout"
