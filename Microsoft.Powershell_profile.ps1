@@ -21,15 +21,9 @@ function prompt { #Colors the Prompt
     Write-Host "ʝąζöʙ ϷϵͲɼίέ " -ForegroundColor Green -NoNewline
 
         $battremaining = (Get-WmiObject win32_battery).estimatedchargeremaining
-        if ($battremaining -gt 66) {
-            Write-Host "🔋$battremaining% " -ForegroundColor DarkGreen -NoNewline
-        }
-        elseif ($battremaining -lt 33) {
-            Write-Host "🔋$battremaining% " -ForegroundColor DarkYellow -NoNewline
-        }
-        else {
-            Write-Host "🔋$battremaining% " -ForegroundColor DarkRed -NoNewline
-        }
+        if ($battremaining -gt 66) { Write-Host "🔋$battremaining% " -ForegroundColor DarkGreen -NoNewline }
+        elseif ($battremaining -lt 33) { Write-Host "🔋$battremaining% " -ForegroundColor DarkRed -NoNewline }
+        else { Write-Host "🔋$battremaining% " -ForegroundColor DarkYellow -NoNewline }
     # Write-Host $pwd -ForegroundColor DarkGreen -NoNewline
     "> "
   }
