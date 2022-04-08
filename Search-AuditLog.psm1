@@ -10,7 +10,7 @@ function Search-AuditLog {
     .SYNOPSIS
         A wrapper for Search-UnifiedAuditLog that can be used for searching larger amounts of logs
     .EXAMPLE
-        Search-AuditLog AzureActiveDirectory -start "03-22-2022" -end "03-24-2022"
+        Search-AuditLog AzureActiveDirectory -start "03-22-2022" -end "03-24-2022" | ft  CreationDate, UserIds, Operations
         
         This will search for Audit Logs in AAD from March 22nd to the 24th
     .PARAMETER record
@@ -43,6 +43,8 @@ function Search-AuditLog {
     )
 
     process {
+
+        $outobject = @()
 
         ###############################################################
         #  Checks to make sure they are connected to Exchange Online  #  
@@ -86,10 +88,10 @@ function Search-AuditLog {
             $sw = [Diagnostics.StopWatch]::StartNew()
             do {
                 $results = Search-UnifiedAuditLog -StartDate $currentStart -EndDate $currentEnd -RecordType $record -SessionId $sessionID -SessionCommand ReturnLargeSet -ResultSize $resultSize
-
+                
                 if (($results | Measure-Object).Count -ne 0) {
                     $results | export-csv -Path $outputFile -Append -NoTypeInformation
-
+                    $outobject += $results
                     $currentTotal = $results[0].ResultCount
                     $totalCount += $results.Count
                     $currentCount += $results.Count
@@ -111,6 +113,7 @@ function Search-AuditLog {
 
         Write-LogFile "END: Retrieving audit records between $($start) and $($end), RecordType=$record, PageSize=$resultSize, total count: $totalCount."
         Write-Host "Script complete! Finished retrieving audit records for the date range between $($start) and $($end). Total count: $totalCount" -foregroundColor Green
+        $outobject
     }
 }
 
