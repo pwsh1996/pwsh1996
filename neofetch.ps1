@@ -13,8 +13,10 @@ $shelly = "Powershell " + $PSVersionTable.PSVersion
 $cpuinfo = (((Get-WmiObject Win32_Processor).Name).replace('(R)',"")).replace('(TM)',"")
 $meminfo = (Get-WmiObject win32_physicalmemory).capacity / 1024 /1024
 $consoleorvs = $host.name
-$uptimeout = ""
 
+###############################
+#  Version Specific commands  # 
+###############################
 if ($PSVersionTable.PSVersion.major -ge 6){
     $kernelver = ($PSVersionTable.OS).Split(" ")[2]
     $uptime = get-uptime
@@ -24,6 +26,9 @@ else {
     $uptime = (get-date) - (gcim Win32_OperatingSystem).LastBootUpTime
 }
 
+#############################
+#  Gets the Terminal data  #
+#############################
 if ($consoleorvs -eq "ConsoleHost") {
     $parenthoster = (Get-Process -id $pid).parent.ProcessName
     if ($parenthoster -eq "WindowsTerminal") {
@@ -37,6 +42,9 @@ else {
     $terminfo = $host.name
 }
 
+######################
+#  Gets the Uptime  #
+######################
 $dayss = $uptime.days.tostring()
 $hourss = $uptime.hours.tostring()
 $minutess = $uptime.minutes.tostring()
@@ -72,24 +80,10 @@ else {
 }
 
 $uptimeout = "$dayss$hourss$minutess"
-#if ($uptime.days -lt 1){
-#    if ($uptime.Hours -lt 1) {
-#    
-#    }
-#    else {
-#
-#    }
-#}
-#else {
-#    $updays = $uptime.days
-#    if ($updays -eq 1){
-#        $uptimeout = "$updays day"
-#    }
-#    else {
-#        $uptimeout = "$updays days"
-#    }
-#}
 
+#######################
+#  Writes the output  #
+#######################
 clear-host
 Write-Host '        ,.=:!!t3Z3z.,' -ForegroundColor red -NoNewline; write-host "                 $username" -ForegroundColor Red -NoNewline;write-host "@" -NoNewline; write-host "$hostname" -ForegroundColor Red
 Write-Host '       :tt:::tt333EE3' -ForegroundColor Red -NoNewline; Write-Host '                 ------------------------'
