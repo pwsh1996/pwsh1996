@@ -1,24 +1,7 @@
 function ChangeMAC {
     [CmdletBinding()]
     param ()
-    process{}
-}
-function GatherMac {
-    [CmdletBinding()]
-    param ()
-    process{}
-}
-function ViewMAC {
-    [CmdletBinding()]
-    param ()
-    process{}
-}
-
-write-host "----------------------------------------"
-write-host '    |_| |\  /` |/ [ |) |\/| |\  |\ |'
-write-host '    | | |`\ \_ |\ [ |\ |  | |`\ | \|'
-write-host "----------------------------------------"
-write-host "Warning: this will modify your registry" -ForegroundColor DarkRed
+    process{write-host "Warning: this will modify your registry" -ForegroundColor DarkRed
 write-host ""
 write-host "Available NICs:" -ForegroundColor DarkGray
 write-host ""
@@ -75,4 +58,44 @@ write-host " $regmac" -ForegroundColor White
 write-host "IPAddress:" -ForegroundColor DarkGray -NoNewline
 $nicipaddr = $($nic | get-netipaddress -addressfamily ipv4).ipaddress
 write-host " $nicipaddr" -ForegroundColor White
-write-host ""
+write-host ""}
+}
+function GatherMac {
+    [CmdletBinding()]
+    param ()
+    process{}
+}
+function ViewMAC {
+    [CmdletBinding()]
+    param ()
+    process{}
+}
+function Home {
+    [CmdletBinding()]
+    param ()
+    process{
+        write-host ""
+        write-host "----------------------------------------"
+        write-host '    |_| |\  /` |/ [ |) |\/| |\  |\ |'
+        write-host '    | | |`\ \_ |\ [ |\ |  | |`\ | \|'
+        write-host "----------------------------------------"
+        write-host ""
+        write-host " 1" -ForegroundColor DarkGray -NoNewline
+        write-host "  Gather MacAddresses" 
+        write-host " 2" -ForegroundColor DarkGray -NoNewline
+        write-host "  View MacAddresses" 
+        write-host " 3" -ForegroundColor DarkGray -NoNewline
+        write-host "  Change MacAddress"
+        write-host " 4" -ForegroundColor DarkGray -NoNewline
+        write-host "  Exit"
+        write-host ""
+        $option = read-host "Select Option"
+        if ($option -eq "1"){GatherMac}
+        elseif ($option -eq "2"){ViewMAC}
+        elseif ($option -eq "3"){ChangeMAC}
+        elseif ($option -eq "4"){return}
+        else {Home}
+    }
+}
+
+Home
