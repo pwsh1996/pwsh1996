@@ -1,3 +1,19 @@
+function ChangeMAC {
+    [CmdletBinding()]
+    param ()
+    process{}
+}
+function GatherMac {
+    [CmdletBinding()]
+    param ()
+    process{}
+}
+function ViewMAC {
+    [CmdletBinding()]
+    param ()
+    process{}
+}
+
 write-host "----------------------------------------"
 write-host '    |_| |\  /` |/ [ |) |\/| |\  |\ |'
 write-host '    | | |`\ \_ |\ [ |\ |  | |`\ | \|'
