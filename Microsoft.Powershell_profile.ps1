@@ -1,25 +1,8 @@
-#############################
-#  Verse of the Day Banner  #
-#############################
-$verseoftheday = @(((Invoke-WebRequest https://www.bible.com/verse-of-the-day).content | where {$_ -match 'data-param-text='}).tostring().split('="') | where {$_ -match '[123]? ?\w+ \d+\:\d+-?\d*\: \w'})
-# On Powershell Core add the following line
-$verseoftheday = @($verseoftheday.split('" data-param-url=') | where {$_ -match '[123]? ?\w+ \d+\:\d+-?\d*\: \w'} )
-Write-Host $verseoftheday[1] -ForegroundColor Black -BackgroundColor white
-function clearhostverse { #Adds the verse of the day on the top of the clear screen
-  clear-host
-  Write-Host $verseoftheday[1] -ForegroundColor Black -BackgroundColor white
-}
-# Add an alias to call said function
-set-alias -name CLS -Value clearhostverse -Option AllScope # clears the screen and pastes the verse of the day at the top again
-
-
-
 ########################
 #   Customize Prompt   #
 ########################
 function prompt { #Colors the Prompt
     Write-Host "ʝąζöʙ ϷϵͲɼίέ " -ForegroundColor Green -NoNewline
-
         $battremaining = (Get-WmiObject win32_battery).estimatedchargeremaining
         if ($battremaining -gt 66) { Write-Host "🔋$battremaining% " -ForegroundColor DarkGreen -NoNewline }
         elseif ($battremaining -lt 33) { Write-Host "🔋$battremaining% " -ForegroundColor DarkRed -NoNewline }
@@ -28,7 +11,10 @@ function prompt { #Colors the Prompt
     "> "
   }
 
-
+##################
+#  Set Defaults  #
+##################
+$PSDefaultParameterValues["Get-ADUser:Properties"] = "PasswordLastSet"
 
 #############################
 #   Customize PS ReadLine   #
@@ -41,7 +27,6 @@ set-psReadLineOption -PredictionViewStyle ListView
 
 ###########################################################################
 # To Use:
-# In Windows PowerShell (for Core uncomment line 6) run
 # notepad.exe $profile
 # And paste the contents in, then save, you will need to restart PowerSehll
 #
