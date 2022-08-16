@@ -2,6 +2,7 @@
 ### 💿 OSes I'm comfortable with 💿
 Windows 10/11 <br />
 Windows Server 2016/2019/2022 <br />
+Palm OS 2.0 <br />
 Apple iOS 15/16
 
 ### 💬 Languages I know well 💬
