@@ -15,4 +15,5 @@ Apple iOS 15/16
 📊[CMD TaskManager](https://github.com/IZZY1996/TaskCMD)📊
 
 ### 📝 Exam Notes 📝 <br />
+[CompTIA CASP+ (CAS-004)](https://github.com/IZZY1996/CAS-004)<br />
 [Microsoft AZ-800](https://github.com/IZZY1996/AZ-800)
