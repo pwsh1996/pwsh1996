@@ -8,7 +8,7 @@ Apple iOS 15/16
 ### 💬 Languages I know well 💬
 [Powershell 5.1/7.2](https://github.com/IZZY1996/IZZY1996/blob/main/Microsoft.Powershell_profile.ps1)
 
-### 🛠 Tools I've made 🛠 <br />
+### 🛠 Tools 🛠 <br />
 🔒[Security Audit Tool](https://github.com/IZZY1996/Security-Audit-Tool)🔒 <br />
 ⛪[CMD Bible App](https://github.com/IZZY1996/Bible)⛪ <br />
 🐧[NetAdapter for Linux](https://github.com/IZZY1996/NetAdapterLinux)🐧<br />
