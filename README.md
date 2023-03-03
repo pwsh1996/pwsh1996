@@ -17,4 +17,5 @@
 
 ### 📝 Exam Notes 📝 <br />
 [CompTIA CASP+ (CAS-004)](https://github.com/IZZY1996/Certification-Study/tree/main/CAS-004)<br />
-[Microsoft AZ-800](https://github.com/IZZY1996/Certification-Study/tree/main/AZ-800)
+[Microsoft AZ-800](https://github.com/IZZY1996/Certification-Study/tree/main/AZ-800) <br />
+[Microsoft AZ-801](https://github.com/IZZY1996/Certification-Study/tree/main/AZ-801)
