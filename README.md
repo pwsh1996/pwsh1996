@@ -3,6 +3,7 @@
 ▧▧▧▧▧ Windows 10/11 <br />
 ▧▧▧▧▧ Windows Server 2016/2019/2022 <br />
 ▧▢▢▢▢ MacOS 12 <br />
+▧▢▢▢▢ Linux <br />
 ▧▧▧▧▢ Apple iOS 15/16 <br /> 
 ▧▧▧▧▢ Palm OS 2.0 
 
