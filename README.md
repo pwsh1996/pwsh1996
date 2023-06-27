@@ -1,8 +1,8 @@
 ## Software Stacks
 
-***💿 OS:*** Windows/Windows Server, MacOS, Ubuntu Linux
+***💿 OS:*** Windows 11/Windows Server 2022, MacOS 12, Ubuntu Linux 22.04
 
-***🤬 Languages:*** [Powershell 5.1/7.2](https://github.com/IZZY1996/IZZY1996/blob/main/Microsoft.Powershell_profile.ps1)
+***🤬 Languages:*** [Powershell 5.1/7.2](https://github.com/IZZY1996/IZZY1996/blob/main/Microsoft.Powershell_profile.ps1), Swift
 
 ***🧱 Firewalls:*** Cisco ASA, OPNsense, Sophos
 
