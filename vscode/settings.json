@@ -1,0 +1,28 @@
+{
+    "workbench.startupEditor": "none",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "workbench.colorTheme": "PowerShell ISE",
+    "telemetry.telemetryLevel": "off",
+    "powershell.codeFormatting.useCorrectCasing": true,
+    "powershell.integratedConsole.suppressStartupBanner": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "debug.openDebug": "neverOpen",
+    "editor.tabCompletion": "on",
+    "powershell.integratedConsole.focusConsoleOnExecute": false,
+    "files.defaultLanguage": "powershell",
+    "editor.wordSeparators": "`~!@#%^&*()-=+[{]}\\|;:'\",.<>/?",
+    "powershell.buttons.showPanelMovementButtons": true,
+    "powershell.codeFolding.showLastLine": false,
+    "powershell.codeFormatting.avoidSemicolonsAsLineTerminators": true,
+    "powershell.codeFormatting.trimWhitespaceAroundPipe": true,
+    "powershell.enableProfileLoading": false,
+    "powershell.analyzeOpenDocumentsOnly": true,
+    "php.suggest.basic": false,
+    "php.validate.enable": false,
+    "editor.minimap.renderCharacters": false,
+    "window.autoDetectHighContrast": false,
+    "workbench.activityBar.visible": false,
+    "workbench.sideBar.location": "right",
+}
