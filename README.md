@@ -4,7 +4,7 @@
 
 ***🤬 Languages:*** [Powershell 5.1/7.2](https://github.com/IZZY1996/IZZY1996/blob/main/Microsoft.Powershell_profile.ps1)
 
-***🧱 Firewalls:*** Cisco ASA, OPNsense, Sophos
+***🧱 Firewalls:*** Cisco ASA, FortiGate, Sophos
 
 ***🌐 Networks:*** HP/Aruba, MikroTik, Ubiquity
 
