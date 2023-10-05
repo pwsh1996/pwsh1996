@@ -1,6 +1,6 @@
 ## Software Stacks
 
-***💿 OS:*** Windows 11/[Windows Server 2022](https://github.com/IZZY1996/WindowsResearch), MacOS 12, Ubuntu Linux 22.04
+***💿 OS:*** Windows 11/[Windows Server 2022](https://github.com/IZZY1996/WindowsResearch), MacOS 12, Debian Linux 12
 
 ***🤬 Languages:*** [Powershell 5.1/7.2](https://github.com/IZZY1996/IZZY1996/blob/main/Microsoft.Powershell_profile.ps1)
 
