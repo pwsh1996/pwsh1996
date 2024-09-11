@@ -1,12 +1,12 @@
 ## Software Stacks
 
-***💿 OS:*** Windows 11/[Windows Server 2022](https://github.com/IZZY1996/WindowsResearch), MacOS 12, Debian Linux 12
+***💿 OS:*** Windows Server 2022, Debian Linux 12
 
 ***🤬 Languages:*** [Powershell 5.1/7.2](https://github.com/IZZY1996/IZZY1996/blob/main/Microsoft.Powershell_profile.ps1)
 
 ***🧱 Firewalls:*** Cisco ASA, FortiGate, Sophos
 
-***🌐 Networks:*** HP/Aruba, MikroTik, Ubiquity
+***🌐 Networks:*** HP/Aruba, MikroTik, ubiquiti
 
 ## Tech Book Errata
 
