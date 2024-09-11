@@ -6,7 +6,7 @@
 
 ***🧱 Firewalls:*** Cisco ASA, FortiGate, Sophos
 
-***🌐 Networks:*** HP/Aruba, MikroTik, ubiquiti
+***🌐 Networks:*** HP/Aruba, MikroTik, Ubiquiti
 
 ## Tech Book Errata
 
