@@ -1,0 +1,247 @@
+<!--
+  -  Sophos XGS3300 Firewall decoder
+  -  Created by Jacob Petrie
+-->
+
+
+<decoder name="sophos-xgs">
+  <prematch>^device_name="SFW"\s+timestamp="(\.+)"\s+device_model="XGS3300"\s+device_serial_id="\w+"</prematch>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+timestamp="(\.+)"\s+device_model="(\w+)"\s+device_serial_id="\w+"\s+log_id="\d+"\s+log_type="(\.+)"\s+log_component="(\.+)"\s+log_subtype="(\w+)"\s+log_version=\d\s+severity="(\w+)"</regex>
+  <order>timestamp,device_model,log_type,log_component,log_subtype,severity</order>
+</decoder>
+
+<!-- Firewall -->
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>fw_rule_id="(\.+)"</regex>
+  <order>fw_rule_id</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+fw_rule_name="(\.+)"\s+</regex>
+  <order>fw_rule_name</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+fw_rule_section="(\.+)"\s+</regex>
+  <order>fw_rule_section</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+nat_rule_id="(\.+)"\s+</regex>
+  <order>nat_rule_id</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+fw_rule_type="(\.+)"\s+</regex>
+  <order>fw_rule_type</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+web_policy_id=(\d+)\s+</regex>
+  <order>web_policy_id</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+log_occurrence=(\d+)</regex>
+  <order>log_occurrence</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+protocol="(\w+)"</regex>
+  <order>protocol</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+src_port=(\d+)\s+dst_port=(\d+)\s+</regex>
+  <order>src_port,dst_port</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+ips_policy_id=(\d+)\s+</regex>
+  <order>ips_policy_id</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+app_filter_policy_id=(\d+)\s+</regex>
+  <order>app_filter_policy_id</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+src_ip="(\d+.\d+.\d+.\d+)"\s+</regex>
+  <order>src_ip</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+dst_ip="(\d+.\d+.\d+.\d+)"</regex>
+  <order>dst_ip</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+src_mac="(\w{2}:\w{2}:\w{2}:\w{2}:\w{2}:\w{2})"\s+</regex>
+  <order>src_mac</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+dst_mac="(\w{2}:\w{2}:\w{2}:\w{2}:\w{2}:\w{2})"\s+</regex>
+  <order>dst_mac</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+dst_country="(\.+)"\s+</regex>
+  <order>dst_country</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+in_display_interface="(\.+)"\s+</regex>
+  <order>in_display_interface</order>
+</decoder>
+
+<!-- Content Filtering -->
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>http_category="(\.+)"\s+http_category_type="(\.+)"\s+url="(\.+)"\s+</regex>
+  <order>http_category,http_category_type,url</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+http_user_agent="(\.+)"\s+http_status="(\d+)"</regex>
+  <order>http_user_agent,http_status</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+domain="(\.+)"\s+</regex>
+  <order>domain</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+content_type="\.+"\s+</regex>
+  <order>content_type</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+web_policy_id=(\d+)\s+</regex>
+  <order>web_policy_id</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+bytes_sent=(\d+)\s+bytes_received=(\d+)\s+</regex>
+  <order>bytes_sent,bytes_received</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+reason="(\.+)"\s+</regex>
+  <order>reason</order>
+</decoder>
+
+<!-- Heartbeat -->
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+yellow_endpoint_count=(\d+)</regex>
+  <order>yellow_endpoint_count</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+green_endpoint_count=(\d+)</regex>
+  <order>green_endpoint_count</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+red_endpoint_count=(\d+)</regex>
+  <order>red_endpoint_count</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+hb_status="(\.+)"</regex>
+  <order>hb_status</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+reported_ip="(\d+.\d+.\d+.\d+)"</regex>
+  <order>reported_ip</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+reported_at="(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}-\d{4})"</regex>
+  <order>reported_at</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+reported_host="(\w+)"</regex>
+  <order>reported_host</order>
+</decoder>
+
+<!-- Event -->
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+name="(\.+)"\s+message="(\.+)"</regex>
+  <order>name,message</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+status="(\w+)"</regex>
+  <order>status</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+user_name="(\.+)"</regex>
+  <order>user_name</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>\s+display_interface="\.+"</regex>
+  <order>display_interface</order>
+</decoder>
+
+<!-- System Health -->
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>non_ssl_count=(\d+)\s+ssl_count=(\d+)\s+decrypted_count=(\d+)</regex>
+  <order>non_ssl_count,ssl_count,decrypted_count</order>
+</decoder>
+
+<decoder name="sophos-xgs-details">
+  <parent>sophos-xgs</parent>
+  <regex>system=(\.+)\s+user=(\.+)\s+idle=(\.+)</regex>
+  <order>system,user,idle</order>
+</decoder>
