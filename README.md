@@ -7,4 +7,5 @@
 ## Pluralsight Courses
 
 ☁️ [CompTIA Cloud+ (CV0-004): Troubleshooting](https://www.pluralsight.com/courses/comptia-cloud-plus-troubleshooting)
+
 🌐 [Windows Server 2025 Network Configuration](https://www.pluralsight.com/courses/windows-server-2025-network-configuration)
